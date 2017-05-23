@@ -76,7 +76,6 @@ function Card(type){
 				typeof args[i] === "string" && element.classList.add(args[i]);
 			}
 		}
-
 		this.content.appendChild(element);
     }
 }

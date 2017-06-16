@@ -18,5 +18,8 @@
   "homepage": "https://github.com/lizzie136/flashbitacora#readme",
   "dependencies": {
     "hapi": "^16.4.3"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }

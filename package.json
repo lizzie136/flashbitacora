@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lizzie136/flashbitacora/issues"
   },
-  "homepage": "https://github.com/lizzie136/flashbitacora#readme"
+  "homepage": "https://github.com/lizzie136/flashbitacora#readme",
+  "dependencies": {
+    "hapi": "^16.4.3"
+  }
 }

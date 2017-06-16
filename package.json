@@ -1,0 +1,19 @@
+{
+  "name": "flashbitacora",
+  "version": "1.0.0",
+  "description": "Proyecto de prueba",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizzie136/flashbitacora.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizzie136/flashbitacora/issues"
+  },
+  "homepage": "https://github.com/lizzie136/flashbitacora#readme"
+}

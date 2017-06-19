@@ -4,7 +4,7 @@
   "description": "Proyecto de prueba",
   "main": "index.js",
   "engines": {
-    "node": "8.0.0"
+    "node": "7.6.9"
   },
   "scripts": {
     "update": "npm install",

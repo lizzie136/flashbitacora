@@ -1,53 +1,19 @@
-'use strict';
+// 
+var express = require('express');
+var app = express();
 
-const Hapi = require('hapi');
+app.set('port', (process.env.PORT || 5000));
 
-// Create a server with a host and port
-var server = new Hapi.Server(+process.env.PORT, '0.0.0.0');
-// var server = new Hapi.Server()
+app.use(express.static(__dirname + '/public'));
 
-// add server’s connection information
-server.connection({  
-  host: '0.0.0.0',
-  port: process.env.PORT || 3000
-});
-server.register({
-  register: require('inert')
-}, function(err) {
-  if (err) throw err;
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
-  server.start(function(err) {
-    console.log('Server started at: ' + server.info.uri);
-  });
-});
-// Add the route
-server.route({
-    method: 'GET',
-    path:'/', 
-    handler: function (request, reply) {
-
-         reply.file('index.html');
-    }
+app.get('/', function(request, response) {
+  response.render('pages/index');
 });
 
-server.route(
-    {
-    method: 'GET',
-    path:'/assets/{file*}', 
-    handler:{
-        directory: {
-            path:  "assets/",
-            listing:true
-        }
-    }
-    });
-
-
-// Start the server
-server.start((err) => {
-
-    if (err) {
-        throw err;
-    }
-    console.log('Server running at:', server.info.uri);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });

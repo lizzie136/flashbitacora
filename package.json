@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/lizzie136/flashbitacora#readme",
   "dependencies": {
-    "hapi": "^16.4.3",
+    "hapi": "^7.5.3",
     "inert": "^4.2.0"
   }
 }

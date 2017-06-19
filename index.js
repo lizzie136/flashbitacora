@@ -1,25 +1,25 @@
 'use strict';
 
-const Hapi = require('hapi')
+const Hapi = require('hapi');
 
 // Create a server with a host and port
-var server = new Hapi.Server(+process.env.PORT, '0.0.0.0')
+var server = new Hapi.Server(+process.env.PORT, '0.0.0.0');
 // var server = new Hapi.Server()
 
 // add server’s connection information
 server.connection({  
   host: '0.0.0.0',
   port: process.env.PORT || 3000
-})
-server.register({  
+});
+server.register({
   register: require('inert')
 }, function(err) {
-  if (err) throw err
+  if (err) throw err;
 
   server.start(function(err) {
-    console.log('Server started at: ' + server.info.uri)
-  })
-})
+    console.log('Server started at: ' + server.info.uri);
+  });
+});
 // Add the route
 server.route({
     method: 'GET',
@@ -31,7 +31,8 @@ server.route({
 });
 
 server.route(
-    {method: 'GET',
+    {
+    method: 'GET',
     path:'/assets/{file*}', 
     handler:{
         directory: {
@@ -39,7 +40,7 @@ server.route(
             listing:true
         }
     }
-});
+    });
 
 
 // Start the server

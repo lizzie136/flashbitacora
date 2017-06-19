@@ -4,7 +4,7 @@
   "description": "Proyecto de prueba",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/lizzie136/flashbitacora#readme",
   "dependencies": {
-    "hapi": "^16.4.3"
-  },
-  "scripts": {
-    "start": "node index.js"
+    "hapi": "^16.4.3",
+    "inert": "^4.2.0"
   }
 }

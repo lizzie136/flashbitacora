@@ -3,21 +3,44 @@
 const Hapi = require('hapi');
 
 // Create a server with a host and port
-const server = new Hapi.Server();
-server.connection({ 
-    host: 'localhost', 
-    port: (~~process.env.PORT || 3000) 
-});
+var server = new Hapi.Server(+process.env.PORT, '0.0.0.0');
+var server = new Hapi.Server()
 
+// add server’s connection information
+server.connection({  
+  host: '0.0.0.0',
+  port: process.env.PORT || 3000
+})
+server.register({  
+  register: require('inert')
+}, function(err) {
+  if (err) throw err
+
+  server.start(function(err) {
+    console.log('Server started at: ' + server.info.uri)
+  })
+})
 // Add the route
 server.route({
     method: 'GET',
     path:'/', 
     handler: function (request, reply) {
 
-         reply.file('./index.html');
+         reply.file('index.html');
     }
 });
+
+server.route(
+    {method: 'GET',
+    path:'/assets/{file*}', 
+    handler:{
+        directory: {
+            path:  "assets/",
+            listing:true
+        }
+    }
+});
+
 
 // Start the server
 server.start((err) => {

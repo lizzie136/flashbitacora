@@ -10,6 +10,23 @@ Este proyecto es un test de los siguientes APIs de HTML5.
 
 Esta hecho con propósitos demostrativos. 
 
+## Comenzar con el proyecto
+
+Para inicializar el proyecto debes tener node instalado, para correrlo en un servidor local, encontrarás un archivo `package.json`, donde se encuentran las dependencias y configuración. 
+Para primero deberás instalar las dependecias con el comando 
+
+```
+npm install
+```
+
+Luego, debes ejecutar el script start que está especificado en el package json usando npm.
+Para ello usamos el comando: 
+
+```
+npm start
+```
+
+
 ## Materialize
 
 Se está usando materialize como framework de css. 

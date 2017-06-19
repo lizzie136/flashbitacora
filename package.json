@@ -20,8 +20,6 @@
   },
   "homepage": "https://github.com/lizzie136/flashbitacora/index.js",
   "dependencies": {
-   // "hapi": "^16.4.3",
-   // "inert": "^4.2.0"
     "ejs": "2.5.6",
     "express": "4.15.2"
   }
